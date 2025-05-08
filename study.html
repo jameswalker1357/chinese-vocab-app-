@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head><title>Học Từ Vựng</title></head>
+  <body>
+    <h2>Luyện tập: {{ direction }}</h2>
+    {% if incorrect %}
+      <p style="color:red;">Sai! Đáp án đúng:</p>
+      <ul>
+        <li><b>Tu:</b> {{ correct }}</li>
+        <li><b>Pinyin:</b> {{ pinyin }}</li>
+        <li><b>Nghĩa:</b> {{ nghia }}</li>
+      </ul>
+    {% endif %}
+    <p><b>Câu hỏi:</b> {{ show }}</p>
+    <form method="post">
+      <input type="text" name="answer" required>
+      <button type="submit">Kiểm tra</button>
+    </form>
+    <br>
+    <a href="/set-direction/Tu">→ Hiện Tu, gõ Nghĩa</a> |
+    <a href="/set-direction/Nghia">→ Hiện Nghĩa, gõ Tu</a>
+    <br><br>
+    <a href="/reset">🔁 Làm lại từ đầu</a>
+  </body>
+</html>
